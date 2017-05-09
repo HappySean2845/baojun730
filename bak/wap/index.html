@@ -1,0 +1,239 @@
+﻿<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+    <title>全新宝骏730</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script>
+        !(function (a, b, c, d, e, f) {
+            var g = "", h = a.sessionStorage, i = "__admaster_ta_param__", j = "tmDataLayer" !== d ? "&dl=" + d : "";
+            if (a[f] = {}, a[d] = a[d] || [], a[d].push({ startTime: +new Date, event: "tm.js" }), h) {
+                var k = a.location.search,
+                l = new RegExp("[?&]" + i + "=(.*?)(&|#|$)").exec(k) || []; l[1] && h.setItem(i, l[1]), l = h.getItem(i),
+                l && (g = "&p=" + l + "&t=" + +new Date)
+            } var m = b.createElement(c), n = b.getElementsByTagName(c)[0]; m.src = "//tag.cdnmaster.cn/tmjs/tm.js?id=" + e + j + g,
+            m.async = !0, n.parentNode.insertBefore(m, n)
+        })(window, document, "script", "tmDataLayer", "TM-735428", "admaster_tm");
+    </script>
+
+</head>
+<body style="display:none;">
+
+
+    <div class="bg1">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="img/logo.png" />
+            </div>
+            <div class="title1">
+                <img src="img/title1.png" />
+            </div>
+        </div>
+    </div>
+    <div class="bg2">
+        <div class="wrapper">
+            <div class="top1">
+                <img src="img/top1.png" />
+            </div>
+            <div class="top2">
+                <img src="img/top2.png" />
+                <input type="text" id="name" />
+                <input type="text" maxlength="11" id="tel" />
+                <select id="pro"></select>
+                <select id="city">
+                    <option sid="-1">请选择</option>
+                </select>
+                <select id="delear">
+                    <option sid="-1">请选择</option>
+                </select>
+
+            </div>
+            <div class="btn">
+                <img src="img/btn1.png" />
+            </div>
+        </div>
+
+
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/md5.js"></script>
+        <script type="text/javascript" src="js/province.js"></script>
+        <script type="text/javascript" src="js/city.js"></script>
+        <script type="text/javascript" src="js/730dealer.js"></script>
+        <script type="text/javascript" src="js/sgmw.js"></script>
+
+        <script type="text/javascript">
+
+            function createPro() {
+                $("#pro").empty(); $("#pro").append('<option sid="-1">请选择</option>');
+                for (var i = 0; i < provinceData.length; i++) {
+                    $("#pro").append('<option sid=' + provinceData[i].proid + '>' + provinceData[i].proname + '</option>');
+                }
+            }
+
+            $("#pro").change(function (event) {
+                var _id = $("#pro option:selected").attr("sid");
+
+                $("#city").empty();
+                $("#city").append('<option sid="-1">请选择</option>');
+                for (var i = 0; i < cicyData.length; i++) {
+                    if (cicyData[i].proID == _id) {
+                        $("#city").append('<option sid=' + cicyData[i].cityID + '>' + cicyData[i].cityName + '</option>');
+                    }
+                }
+
+                var _id = $("#city option:selected").attr("sid");
+
+                $("#delear").empty();
+                $("#delear").append('<option sid="-1">请选择</option>');
+                for (var i = 0; i < WuLingdealers.length; i++) {
+                    if (WuLingdealers[i].city == _id) {
+                        $("#delear").append('<option sid=' + WuLingdealers[i].dealerCode + '>' + WuLingdealers[i].company + '</option>');
+                    }
+                }
+            });
+
+            $("#city").change(function (event) {
+                var _id = $("#city option:selected").attr("sid");
+
+                $("#delear").empty();
+                for (var i = 0; i < WuLingdealers.length; i++) {
+                    if (WuLingdealers[i].city == _id) {
+                        $("#delear").append('<option sid=' + WuLingdealers[i].dealerCode + '>' + WuLingdealers[i].company + '</option>');
+                    }
+                }
+            });
+
+            createPro();
+
+            function resiez() {
+                var w = $(window).width();
+
+
+                if (w <= 910) {
+                    $(".wrapper").css("width", "100%");
+                    $(".bg1").css("background-size", "100%");
+                    $(".bg1").css("background-image", "url(img/bg1W.jpg)");
+                    $(".bg1").css("height", (w / 910) * 975);
+                    $(".bg2").css("background-size", "100%");
+                    $(".bg2").css("background-image", "url(img/bg2W.jpg)");
+                    $(".bg2").css("height", (w / 910) * 1491);
+                    $("#name").css("height", (w / 910) * 50);
+                    $("#name").css("width", (w / 910) * 118);
+                    $("#name").css("top", (w / 910) * 190);
+                    $("#name").css("left", (w / 910) * 136);
+                    $("#tel").css("height", (w / 910) * 50);
+                    $("#tel").css("width", (w / 910) * 116);
+                    $("#tel").css("top", (w / 910) * 190);
+                    $("#tel").css("left", (w / 910) * 348);
+                    $("#pro").css("height", (w / 910) * 32);
+                    $("#pro").css("width", (w / 910) * 143);
+                    $("#pro").css("top", (w / 910) * 264);
+                    $("#pro").css("left", (w / 910) * 97);
+                    $("#city").css("height", (w / 910) * 32);
+                    $("#city").css("width", (w / 910) * 144);
+                    $("#city").css("top", (w / 910) * 264);
+                    $("#city").css("left", (w / 910) * 312);
+                    $("#delear").css("height", (w / 910) * 32);
+                    $("#delear").css("width", (w / 910) * 289);
+                    $("#delear").css("top", (w / 910) * 331);
+                    $("#delear").css("left", (w / 910) * 160);
+                    $("#name").css("font-size", "10px");
+                    $("#tel").css("font-size", "10px");
+                    $("#pro").css("font-size", "10px");
+                    $("#city").css("font-size", "10px");
+                    $("#delear").css("font-size", "10px");
+                } else {
+                    w = 910;
+                    $(".wrapper").css("width", "910px");
+                    $(".bg1").css("background-size", "1600px");
+                    $(".bg1").css("background-image", "url(img/bg1.jpg)");
+                    $(".bg1").css("height", "975px");
+                    $(".bg2").css("background-size", "1600px");
+                    $(".bg2").css("background-image", "url(img/bg2.jpg)");
+                    $(".bg2").css("height", "1491px");
+                    $("#name").css("height", (w / 910) * 32);
+                    $("#name").css("width", (w / 910) * 118);
+                    $("#name").css("top", (w / 910) * 198);
+                    $("#name").css("left", (w / 910) * 136);
+                    $("#tel").css("height", (w / 910) * 32);
+                    $("#tel").css("width", (w / 910) * 116);
+                    $("#tel").css("top", (w / 910) * 198);
+                    $("#tel").css("left", (w / 910) * 348);
+                    $("#pro").css("height", (w / 910) * 32);
+                    $("#pro").css("width", (w / 910) * 143);
+                    $("#pro").css("top", (w / 910) * 264);
+                    $("#pro").css("left", (w / 910) * 97);
+                    $("#city").css("height", (w / 910) * 32);
+                    $("#city").css("width", (w / 910) * 144);
+                    $("#city").css("top", (w / 910) * 264);
+                    $("#city").css("left", (w / 910) * 312);
+                    $("#delear").css("height", (w / 910) * 32);
+                    $("#delear").css("width", (w / 910) * 289);
+                    $("#delear").css("top", (w / 910) * 331);
+                    $("#delear").css("left", (w / 910) * 160);
+                    $("#name").css("font-size", "14px");
+                    $("#tel").css("font-size", "14px");
+                    $("#pro").css("font-size", "14px");
+                    $("#city").css("font-size", "14px");
+                    $("#delear").css("font-size", "14px");
+                }
+            }
+
+            window.onresize = function () {
+                resiez();
+            };
+
+            resiez();
+
+
+
+            $(".btn").click(function (event) {
+                _smq.push(['custom', '17-baojun', '730millionsownerMB-home-sumbit']);
+
+                var name = $("#name").val();
+
+                if (!validate.isEmpty(name)) {
+                    alert("请输入姓名");
+                    return false;
+                }
+
+                var tel = $("#tel").val();
+
+                if (!validate.isMobile(tel)) {
+                    alert("请输入正确的手机号码");
+                    return false;
+                }
+
+                var province = $("#pro option:selected").text();
+                if (province == "请选择") {
+                    alert("请选择省份");
+                    return false;
+                }
+                var city = $("#city option:selected").text();
+
+                if (city == "请选择") {
+                    alert("请选择城市");
+                    return false;
+                }
+
+                var delear = $("#delear option:selected").text();
+
+                if (delear == "请选择") {
+                    alert("请选择经销商");
+                    return false;
+                }               
+
+                addInfo(name, tel, $("#pro option:selected").attr("sid"), $("#city option:selected").attr("sid"), $("#delear option:selected").attr("sid"))
+            });
+
+            window.onload = function () {
+                $("body").fadeIn(300);
+            }
+
+        </script>
+
+</body>
+</html>
