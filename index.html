@@ -20,8 +20,13 @@
     </script>
 
 </head>
-<body>
+<body style="display:none">
   <div class="content">
+    <div class="light_wrap">
+        <div class="light"><img src="images/light.png"></div>
+        <div class="light"><img src="images/light.png"></div>
+        <div class="car"></div>
+    </div>
     <div class="number">
       <span>0</span>
       <span>0</span>
@@ -41,25 +46,49 @@
       <select id="delear">
           <option sid="-1">请选择</option>
       </select>
-      <div class="submit"></div>
+      <div class="submit btn"></div>
     </div>
     <div class="wheel">
       <div class="start"></div>
     </div>
     <marquee direction='up' class="award" scrollamount="2">
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
-      <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>河北  张先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>江苏  吴女士  全新宝骏730  ************************** 获奖 小米手环2 一个</div>
+        <div>山东  李先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>浙江  顾先生  全新宝骏730  ************************** 获奖 小米手环2 一张</div>
+        <div>江苏  王先生  全新宝骏730  ************************** 获奖 爱奇艺年卡 一张</div>
+        <div>河南  朱女士  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>广西  董先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>北京  曲先生  全新宝骏730  ************************** 获奖 爱奇艺年卡 一张</div>
+        <div>上海  陈先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>浙江  刘先生  全新宝骏730  ************************** 获奖 小米手环2 一个</div>
+        <div>安徽  叶先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>上海  江女士  全新宝骏730  ************************** 获奖 小米手环2 一个</div>
+        <div>山东  邹女士  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>河北  汤先生  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>北京  李先生  全新宝骏730  ************************** 获奖 小米手环2 一个</div>
+        <div>广东  葛先生  全新宝骏730  ************************** 获奖 小米手环2 一个</div>
+        <div>江西  姚女士  全新宝骏730  ************************** 获奖 500京东卡 一张</div>
+        <div>浙江  何女士  全新宝骏730  ************************** 获奖 爱奇艺年卡 一张</div>
+        <div>广西  韦先生  全新宝骏730  ************************** 获奖 爱奇艺年卡 一张</div>
     </marquee >
+    <div class="pic">
+        <div class="big_img"><img src="images/4.jpg"></div>
+        <div class="s_img"><img src="images/3.jpg"></div>
+        <div class="s_img"><img src="images/1.jpg"></div>
+        <div class="s_img"><img src="images/2.jpg"></div>
+    </div>
+    <div class="news">
+        <a href=""><img src="images/news_link.png"></a>
+        <a href=""><img src="images/news_link.png"></a>
+        <a href=""><img src="images/news_link.png"></a>
+        <a href=""><img src="images/news_link.png"></a>
+    </div>
   </div>
+  <div class="mask"></div>
+  <div class="popup_hint"><img src="images/no_luck.png"></div>
+  <div class="popup_hint"><img src="images/no_chance.png"></div>
+  <div class="popup_pic"><img src=""></div>
 </body>
 <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 <script src="js/md5.js"></script>
@@ -69,9 +98,6 @@
 <script type="text/javascript" src="js/sgmw.js"></script>
 
 <script type="text/javascript">
-    $('.start').click(function(){
-      $(this).css('transform','rotate(3600deg)');
-    })
     function createPro() {
         $("#pro").empty(); $("#pro").append('<option sid="-1">请选择</option>');
         for (var i = 0; i < provinceData.length; i++) {
@@ -113,44 +139,72 @@
     });
 
     createPro();
-
+    //改变每日销量
+    function changeSale(){
+        var number = [];
+        var s1 = '2017-05-10';
+        s1 = new Date(s1.replace(/-/g, "/"));
+        s2 = new Date();
+        var days = s2.getTime() - s1.getTime();
+        var time = parseInt(days / (1000 * 60 * 60 * 24));
+        console.log(time);
+        $('.number span').each(function(e,v){
+            number.push($(v).html());
+        });
+        temp_number = parseInt(number.join(''));
+        temp_number = (temp_number + time*311).toString().split('');
+        for(var i=0;i<temp_number.length;i++){
+            number[i+number.length-temp_number.length] = temp_number[i];
+        }
+        for(var i=0;i<number.length;i++){
+            $('.number span').eq(i).html(number[i]);
+        }
+        console.log(number)
+        
+    }
+    changeSale();
+    $('.pic div').click(function(e){
+        var _this = $(this).children("img");
+        $('.mask').fadeIn();
+        $('.popup_pic').fadeIn();
+        $('.popup_pic img').attr('src',_this.attr('src'))
+    })
+    $('.popup_pic img').click(function(e){
+        $('.popup_pic').fadeOut();
+        $('.mask').fadeOut();
+    })
+    //抽奖
+    $('.start').click(function(){
+        if(no_chance){
+            $('.popup_hint').eq(1).fadeIn();
+            $('.mask').fadeIn();
+        }else if(can_draw){
+            $(this).css('transform','rotate(3600deg)');
+            setTimeout(function(){
+                $('.popup_hint').eq(0).fadeIn();
+                $('.mask').fadeIn();
+                no_chance = true;
+            },3500)
+        }else{
+            alert('请先输入信息预约才可以抽奖');
+        }
+      // $('.mask').fadeIn();
+    })
+    //关闭
+    $('.popup_hint').click(function(e){
+        $(this).fadeOut();
+        $('.mask').fadeOut();
+    })
     function resiez() {
         var w = $(window).width();
 
 
         if (w <= 910) {
-            $(".wrapper").css("width", "100%");
-            $(".bg1").css("background-size", "100%");
-            $(".bg1").css("background-image", "url(img/bg1W.jpg)");
-            $(".bg1").css("height", (w / 910) * 2705);
-            $(".bg2").css("background-size", "100%");
-            $(".bg2").css("background-image", "url(img/bg2W.jpg)");
-            $(".bg2").css("height", (w / 910) * 1491);
-            $("#name").css("height", (w / 910) * 50);
-            $("#name").css("width", (w / 910) * 220);
-            $("#name").css("top", (w / 910) * 190);
-            $("#name").css("left", (w / 910) * 270);
-            $("#tel").css("height", (w / 910) * 50);
-            $("#tel").css("width", (w / 910) * 220);
-            $("#tel").css("top", (w / 910) * 190);
-            $("#tel").css("left", (w / 910) * 590);
-            $("#pro").css("height", (w / 910) * 36);
-            $("#pro").css("width", (w / 910) * 220);
-            $("#pro").css("top", (w / 910) * 155);
-            $("#pro").css("left", (w / 910) * 270);
-            $("#city").css("height", (w / 910) * 36);
-            $("#city").css("width", (w / 910) * 220);
-            $("#city").css("top", (w / 910) * 155);
-            $("#city").css("left", (w / 910) * 590);
-            $("#delear").css("height", (w / 910) * 36);
-            $("#delear").css("width", (w / 910) * 500);
-            $("#delear").css("top", (w / 910) * 220);
-            $("#delear").css("left", (w / 910) * 310);
-            $("#name").css("font-size", "10px");
-            $("#tel").css("font-size", "10px");
-            $("#pro").css("font-size", "10px");
-            $("#city").css("font-size", "10px");
-            $("#delear").css("font-size", "10px");
+            var _screenWidth = document.documentElement.clientWidth < 300 ? 300 : document.documentElement.clientWidth,
+                _UIWidth = 640,
+                _fontSize = _screenWidth / _UIWidth * 100;
+            document.documentElement.style.fontSize = _fontSize + 'px';
+
         } else {
             w = 910;
             $(".wrapper").css("width", "910px");
@@ -162,23 +216,23 @@
             $(".bg2").css("height", "1491px");
             $("#name").css("height", (w / 910) * 36);
             $("#name").css("width", (w / 910) * 220);
-            $("#name").css("top", (w / 910) * 89);
+            $("#name").css("top", (w / 910) * 92);
             $("#name").css("left", (w / 910) * 270);
             $("#tel").css("height", (w / 910) * 36);
             $("#tel").css("width", (w / 910) * 220);
-            $("#tel").css("top", (w / 910) * 89);
+            $("#tel").css("top", (w / 910) * 92);
             $("#tel").css("left", (w / 910) * 590);
             $("#pro").css("height", (w / 910) * 36);
             $("#pro").css("width", (w / 910) * 220);
-            $("#pro").css("top", (w / 910) * 155);
+            $("#pro").css("top", (w / 910) * 158);
             $("#pro").css("left", (w / 910) * 270);
             $("#city").css("height", (w / 910) * 36);
             $("#city").css("width", (w / 910) * 220);
-            $("#city").css("top", (w / 910) * 155);
+            $("#city").css("top", (w / 910) * 158);
             $("#city").css("left", (w / 910) * 590);
             $("#delear").css("height", (w / 910) * 36);
             $("#delear").css("width", (w / 910) * 500);
-            $("#delear").css("top", (w / 910) * 220);
+            $("#delear").css("top", (w / 910) * 223);
             $("#delear").css("left", (w / 910) * 310);
             $(".submit").css("left", (w / 910) * 390);
             $(".submit").css("top", (w / 910) * 310);
@@ -240,6 +294,7 @@
     });
 
     window.onload = function () {
+        // alert(11)
         $("body").fadeIn(300);
     }
 

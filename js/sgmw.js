@@ -1,5 +1,7 @@
 ﻿
 var clickFlag = true;
+var can_draw = false;
+var no_chance = false;
 var validate = {
     isEmpty: function (val) {
         if (val == "") {
@@ -144,6 +146,7 @@ var validate = {
 }
 
 function addInfo(_name, _tel, _province, _city, _dealer) {
+    var 
     clickFlag = false;
     $.ajax({
         url: "http://www.sgmw.com.cn/ashx/reservation_json.aspx",
@@ -170,8 +173,8 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
         success: function (result) {
             var wr = result.success[0].result;
             if (wr == 1) {
-                alert('预约成功');
-
+                alert('预约成功，可以进行抽奖');
+                can_draw = true;
                 var p = $("#pro option:selected").text();
                 var c = $("#city option:selected").text();
                 var d = $("#delear option:selected").text();
