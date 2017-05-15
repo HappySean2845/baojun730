@@ -22,6 +22,7 @@
 </head>
 <body style="display:none">
   <div class="content">
+    <a class="to_top" href="#sign_up">立即预约</a>
     <div class="light_wrap">
         <div class="light"><img src="images/light.png"></div>
         <div class="light"><img src="images/light.png"></div>
@@ -29,14 +30,14 @@
     </div>
     <div class="number">
       <span>0</span>
-      <span>0</span>
-      <span>0</span>
+      <span>9</span>
+      <span>3</span>
       <span>9</span>
       <span>5</span>
       <span>8</span>
       <span>9</span>
     </div>
-    <div class="info">
+    <a class="info" name="sign_up" id="sign_up">
       <input type="text" id="name" />
       <input type="text" maxlength="11" id="tel" />
       <select id="pro"></select>
@@ -47,7 +48,7 @@
           <option sid="-1">请选择</option>
       </select>
       <div class="submit btn"></div>
-    </div>
+    </a>
     <div class="wheel">
       <div class="start"></div>
     </div>
@@ -83,6 +84,7 @@
         <a href=""><img src="images/news_link.png"></a>
         <a href=""><img src="images/news_link.png"></a>
         <a href=""><img src="images/news_link.png"></a>
+        <a class="sign_up_now" href="#sign_up"></a>
     </div>
   </div>
   <div class="mask"></div>
@@ -96,6 +98,7 @@
 <script type="text/javascript" src="js/city.js"></script>
 <script type="text/javascript" src="js/730dealer.js"></script>
 <script type="text/javascript" src="js/sgmw.js"></script>
+<script type="text/javascript" src="js/share.js"></script>
 
 <script type="text/javascript">
     function createPro() {
@@ -152,7 +155,7 @@
             number.push($(v).html());
         });
         temp_number = parseInt(number.join(''));
-        temp_number = (temp_number + time*311).toString().split('');
+        temp_number = (temp_number + time*658).toString().split('');
         for(var i=0;i<temp_number.length;i++){
             number[i+number.length-temp_number.length] = temp_number[i];
         }
