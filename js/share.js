@@ -32,11 +32,11 @@ wx.ready(function() {
     addWeiXinEvent(0);
 });
 var addWeiXinEvent = function(index) {
-    $.timelineTitle = "献给有经历 懂生活 爱家庭的人";
-    $.shareAppDesc = "献给有经历 懂生活 爱家庭的人";
-    $.shareAppTitle = "全新宝骏730——大家庭时代的宽适家用座驾";
-    $.shareUrl = "http://www.sgmw.com.cn/m/20170425/index.html";
-    $.shareImage = "http://www.sgmw.com.cn/m/20170425/images/share.png";
+    $.timelineTitle = "全新宝骏730百万车主感恩季";
+    $.shareAppDesc = "宝骏730销量突破一百万，感恩有你，回馈有礼！";
+    $.shareAppTitle = "全新宝骏730百万车主感恩季";
+    $.shareUrl = window.location.href
+    $.shareImage = "../images/share.jpg";
     wx.onMenuShareAppMessage({
         title: $.shareAppTitle,
         desc: $.shareAppDesc,
