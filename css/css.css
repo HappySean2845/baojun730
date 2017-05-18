@@ -1,9 +1,9 @@
 /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
-/* 内外边距通常让各个浏览器样式的表现位置不同 */ 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
-margin:0; 
-padding:0; 
-} 
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+margin:0;
+padding:0;
+}
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -274,12 +274,12 @@ select {
 }
 
 input,
-textarea { 
+textarea {
     font-family: inherit; /* 1 */
     font-size: 80%; /* 2 */
     margin: 0; /* 3 */
-	padding:5px;
-	}
+  padding:5px;
+  }
 /*
  * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
@@ -382,39 +382,39 @@ table {
     border-spacing: 0;
 }
 
-/* 去掉列表前的标识, li 会继承 */ 
-ol,ul { 
-list-style:none; 
-} 
+/* 去掉列表前的标识, li 会继承 */
+ol,ul {
+list-style:none;
+}
 
-/* 设置内联, 减少浮动带来的bug */ 
-.fl { 
-float:left; 
-display:inline; 
-} 
-.fr { 
-float:right; 
-display:inline; 
-} 
+/* 设置内联, 减少浮动带来的bug */
+.fl {
+float:left;
+display:inline;
+}
+.fr {
+float:right;
+display:inline;
+}
 
-/* 默认不显示下划线，保持页面简洁 */ 
-ins,a { 
-text-decoration:none; 
-} 
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+text-decoration:none;
+}
 
-/* 让链接在 hover 状态下显示下划线 */ 
-a:hover { 
-text-decoration:none; 
-} 
-/* 清除浮动 */ 
-.clear{ 
-clear:both; 
-display:block; 
-overflow:hidden; 
-height:0; 
-line-height:0; 
-font-size:0; 
-} 
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+text-decoration:none;
+}
+/* 清除浮动 */
+.clear{
+clear:both;
+display:block;
+overflow:hidden;
+height:0;
+line-height:0;
+font-size:0;
+}
 
 
 a {outline: none;}
@@ -486,7 +486,7 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
 .mask{display:none;width:100%;height:100%;top:0;position:fixed;background:rgba(0,0,0,.5);}
 .popup_hint{display:none;position:fixed;width:593px;height:373px;top:33%;left:35%;}
 .popup_pic{display: none;position: fixed;width: 1000px;height: 583px;top: 0;left: 0;right: 0;bottom: 0;margin: auto;}
-.to_top{    
+.to_top{
   width: 34px;
   background: url(../images/top.png) 50% 20px no-repeat #551374;
   position: fixed;
@@ -553,12 +553,12 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
     background: url(../images/sign_up_btn.png) center no-repeat;left:2.05rem;background-size:2.29rem 0.62rem;
     transform:scale(0.8);-webkit-transform:scale(0.8);
   }
-  .to_top{    
+  .to_top{
     width:0.34rem;
     background: url(../images/top.png) 50% 0.2rem no-repeat #551374;
     background-size:0.38rem 0.43rem;
     position: fixed;
-    right:0.18rem;
+    right:-0.1rem;
     top: 45%;
     color: #fff;
     font-size:0.28rem;
@@ -569,7 +569,7 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
     line-height: 0.33rem;
     cursor:pointer;
     z-index:20;
-    transform:scale(0.8);
-    -webkit-transform:scale(0.8);
+    transform:scale(0.6);
+    -webkit-transform:scale(0.6);
   }
 }

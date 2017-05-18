@@ -1,7 +1,7 @@
 $.ajax({
     url: "http://www.adleading.com/authorize_new/share_sample.php",
     type: "GET",
-    cache: true,
+    // cache: true,
     data: {u: window.location.href},
     dataType: "jsonp",
     success: function(back) {
