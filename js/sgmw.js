@@ -146,13 +146,13 @@ var validate = {
 }
 
 function addInfo(_name, _tel, _province, _city, _dealer) {
-    var 
+    var
     clickFlag = false;
     $.ajax({
         url: "http://www.sgmw.com.cn/ashx/reservation_json.aspx",
         dataType: 'jsonp',
         data: {
-            aid: 0,
+            aid: 159,
             fid: 0,
             lid: 0,
             name: _name,
