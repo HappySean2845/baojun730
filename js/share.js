@@ -24,7 +24,7 @@ $.ajax({
 });
 
 wx.ready(function() {
-    // 在这里调用 API
+    // 在这里调用 e
     wx.error(function(res) {
         //console.log(res)
     });
@@ -36,7 +36,7 @@ var addWeiXinEvent = function(index) {
     $.shareAppDesc = "宝骏730销量突破一百万，感恩有你，回馈有礼！";
     $.shareAppTitle = "全新宝骏730百万车主感恩季";
     $.shareUrl = window.location.href
-    $.shareImage = "../images/share.jpg";
+    $.shareImage = "/images/share.jpg";
     wx.onMenuShareAppMessage({
         title: $.shareAppTitle,
         desc: $.shareAppDesc,
