@@ -146,8 +146,13 @@ var validate = {
 }
 
 function addInfo(_name, _tel, _province, _city, _dealer) {
-    var
     clickFlag = false;
+    var submit_type;
+    if(is_pc){
+        submit_type = 'PC';
+    }else{
+        submit_type = 'MB';
+    }
     $.ajax({
         url: "http://www.sgmw.com.cn/ashx/reservation_json.aspx",
         dataType: 'jsonp',
@@ -163,7 +168,7 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
             dealercode: _dealer,
             cartype: '宝骏730',
             mark: '',
-            source: '全新宝骏730预约试驾PC',
+            source: '全新宝骏730预约试驾'+submit_type,
             ordering: 0,
             driving: 1,
             credit: 0
@@ -178,7 +183,12 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                 var p = $("#pro option:selected").text();
                 var c = $("#city option:selected").text();
                 var d = $("#delear option:selected").text();
-                _smq.push(['custom', '17-baojun', '730millionsownerPC-home-sumbitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+success}']);
+                _tel = _tel.replace(input.substr(3,4),'****')
+                if(is_pc){
+                    _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-sumbitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
+                }else{
+                    _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-sumbitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
+                }
 
             } else if (wr == 2) {
                 alert('您已预约成功,请勿重复提交');

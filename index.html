@@ -7,17 +7,13 @@
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <title>宝骏730-百万车主狂欢节</title>
     <link rel="stylesheet" type="text/css" href="css/css.css">
-    <script>
-        !(function (a, b, c, d, e, f) {
-            var g = "", h = a.sessionStorage, i = "__admaster_ta_param__", j = "tmDataLayer" !== d ? "&dl=" + d : "";
-            if (a[f] = {}, a[d] = a[d] || [], a[d].push({ startTime: +new Date, event: "tm.js" }), h) {
-                var k = a.location.search,
-                l = new RegExp("[?&]" + i + "=(.*?)(&|#|$)").exec(k) || []; l[1] && h.setItem(i, l[1]), l = h.getItem(i),
-                l && (g = "&p=" + l + "&t=" + +new Date)
-            } var m = b.createElement(c), n = b.getElementsByTagName(c)[0]; m.src = "//tag.cdnmaster.cn/tmjs/tm.js?id=" + e + j + g,
-            m.async = !0, n.parentNode.insertBefore(m, n)
-        })(window, document, "script", "tmDataLayer", "TM-735428", "admaster_tm");
+    <script>!(function(a,b,c,d,e,f){var g="",h=a.sessionStorage,i="__admaster_ta_param__",j="tmDataLayer"!==d?"&dl="+d:"";
+if(a[f]={},a[d]=a[d]||[],a[d].push({startTime:+new Date,event:"tm.js"}),h){var k=a.location.search,
+l=new RegExp("[?&]"+i+"=(.*?)(&|#|$)").exec(k)||[];l[1]&&h.setItem(i,l[1]),l=h.getItem(i),
+l&&(g="&p="+l+"&t="+ +new Date)}var m=b.createElement(c),n=b.getElementsByTagName(c)[0];m.src="//tag.cdnmaster.cn/tmjs/tm.js?id="+e+j+g,
+m.async=!0,n.parentNode.insertBefore(m,n)})(window,document,"script","tmDataLayer","TM-735428","admaster_tm");
     </script>
+
 
 </head>
 <body style="display:none">
@@ -101,6 +97,7 @@
 <script type="text/javascript" src="js/share.js"></script>
 
 <script type="text/javascript">
+    var is_pc;       //浏览类型，pc还是mb
     function createPro() {
         $("#pro").empty(); $("#pro").append('<option sid="-1">请选择</option>');
         for (var i = 0; i < provinceData.length; i++) {
@@ -163,10 +160,42 @@
             $('.number span').eq(i).html(number[i]);
         }
         console.log(number)
-        
+
     }
     changeSale();
+    //点击看大图
     $('.pic div').click(function(e){
+        console.log($(this).index());
+        switch($(this).index()){
+            case 0:
+                if(is_pc){
+                    _smq.push(['custom','17-baojun','730millionsownernewPC-home-carbigP']);
+                }else{
+                    _smq.push(['custom','17-baojun','730millionsownernewMB-home-carbigP']);
+                }
+            break;
+            case 1:
+                if(is_pc){
+                    _smq.push(['custom','17-baojun','730millionsownernewPC-home-carP1']);
+                }else{
+                    _smq.push(['custom','17-baojun','730millionsownernewMB-home-carP1']);
+                }
+            break;
+            case 2:
+                if(is_pc){
+                    _smq.push(['custom','17-baojun','730millionsownernewPC-home-carP2']);
+                }else{
+                    _smq.push(['custom','17-baojun','730millionsownernewMB-home-carP2']);
+                }
+            break;
+            case 3:
+                if(is_pc){
+                    _smq.push(['custom','17-baojun','730millionsownernewPC-home-carP3']);
+                }else{
+                    _smq.push(['custom','17-baojun','730millionsownernewMB-home-carP3']);
+                }
+            break;
+        }
         var _this = $(this).children("img");
         $('.mask').fadeIn();
         $('.popup_pic').fadeIn();
@@ -178,6 +207,11 @@
     })
     //抽奖
     $('.start').click(function(){
+        if(is_pc){
+            _smq.push(['custom','17-baojun','730millionsownernewPC-home-luckydraw']);
+        }else{
+            _smq.push(['custom','17-baojun','730millionsownernewMB-home-luckydraw']);
+        }
         if(no_chance){
             $('.popup_hint').eq(1).fadeIn();
             $('.mask').fadeIn();
@@ -200,15 +234,14 @@
     })
     function resiez() {
         var w = $(window).width();
-
-
         if (w <= 910) {
             var _screenWidth = document.documentElement.clientWidth < 300 ? 300 : document.documentElement.clientWidth,
                 _UIWidth = 640,
                 _fontSize = _screenWidth / _UIWidth * 100;
             document.documentElement.style.fontSize = _fontSize + 'px';
-
+            is_pc = false;
         } else {
+            is_pc = true;
             w = 910;
             $(".wrapper").css("width", "910px");
             $(".bg1").css("background-size", "1600px");
@@ -259,7 +292,11 @@
 
 
     $(".btn").click(function (event) {
-        _smq.push(['custom', '17-baojun', '730millionsownerPC-home-sumbit']);
+        if(is_pc){
+            _smq.push(['custom','17-baojun','730millionsownernewPC-home-sumbit']);
+        }else{
+            _smq.push(['custom','17-baojun','730millionsownernewMB-home-subimit']);
+        }
         var name = $("#name").val();
 
         if (!validate.isEmpty(name)) {
@@ -299,6 +336,53 @@
     window.onload = function () {
         // alert(11)
         $("body").fadeIn(300);
+        //留资
+        $('.to_top').click(function(e){
+            if(is_pc){
+                _smq.push(['custom','17-baojun','730millionsownernewPC-home-testdrive']);
+            }else{
+                _smq.push(['custom','17-baojun','730millionsownernewMB-home-testdrive']);
+            }
+        })
+        $('.news a').click(function(e){
+            switch($(this).index()){
+                case 0:
+                    if(is_pc){
+                        _smq.push(['custom','17-baojun','730millionsownernewPC-home-mediaP1']);
+                    }else{
+                        _smq.push(['custom','17-baojun','730millionsownernewMB-home-mediaP1']);
+                    };
+                    break;
+                case 1:
+                    if(is_pc){
+                        _smq.push(['custom','17-baojun','730millionsownernewPC-home-mediaP2']);
+                    }else{
+                        _smq.push(['custom','17-baojun','730millionsownernewMB-home-mediaP2']);
+                    };
+                    break;
+                case 2:
+                    if(is_pc){
+                        _smq.push(['custom','17-baojun','730millionsownernewPC-home-mediaP3']);
+                    }else{
+                        _smq.push(['custom','17-baojun','730millionsownernewMB-home-mediaP3']);
+                    };
+                    break;
+                case 3:
+                    if(is_pc){
+                        _smq.push(['custom','17-baojun','730millionsownernewPC-home-mediaP4']);
+                    }else{
+                        _smq.push(['custom','17-baojun','730millionsownernewMB-home-mediaP4']);
+                    };
+                    break;
+                case 3:
+                    if(is_pc){
+                        _smq.push(['custom','17-baojun','730millionsownernewPC-home-rightnowtestdrive']);
+                    }else{
+                        _smq.push(['custom','17-baojun','730millionsownernewMB-home-rightnowtestdrive']);
+                    };
+                    break;
+            }
+        })
     }
 
 </script>
