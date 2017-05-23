@@ -158,7 +158,7 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
         dataType: 'jsonp',
         data: {
             aid: 165,
-            fid: 0,
+            fid: $_GET('MediaID'),
             lid: 0,
             name: _name,
             phone: _tel,
@@ -183,11 +183,11 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                 var p = $("#pro option:selected").text();
                 var c = $("#city option:selected").text();
                 var d = $("#delear option:selected").text();
-                _tel = _tel.replace(input.substr(3,4),'****')
+                _tel = _tel.replace(_tel.substr(3,4),'****')
                 if(is_pc){
-                    _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-sumbitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
+                    _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }else{
-                    _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-sumbitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
+                    _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }
 
             } else if (wr == 2) {
@@ -199,4 +199,10 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
         }
 
     });
+}
+function $_GET(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]);
+    return "";
 }
