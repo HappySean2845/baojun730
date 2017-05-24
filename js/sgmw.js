@@ -183,13 +183,27 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                 var p = $("#pro option:selected").text();
                 var c = $("#city option:selected").text();
                 var d = $("#delear option:selected").text();
-                _tel = _tel.replace(_tel.substr(3,4),'****')
+                _tel = _tel.replace(_tel.substr(3,4),'****');
+                _gsq.push(['T', 'GWD-002942', 'trackEvent', 'click', '730',location.pathname]);
                 if(is_pc){
                     _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }else{
                     _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }
-
+                if (window.gsTracker) {
+                    var orderid = leadsID;
+                    gsTracker.addOrder(orderid, 1);
+                    gsTracker.setEcomProperty(orderid, "1", _name);
+                    gsTracker.setEcomProperty(orderid, "2", _tel);
+                    gsTracker.setEcomProperty(orderid, "3", "宝骏730");
+                    gsTracker.setEcomProperty(orderid, "4", p);
+                    gsTracker.setEcomProperty(orderid, "5", c);
+                    gsTracker.setEcomProperty(orderid, "6", _dealer);
+                    gsTracker.addProduct(orderid, location.pathname, location.pathname, 1, 1, "全新宝骏730");
+                    //此处可以根据活动页面实际title进行更换；
+                    gsTracker.trackECom();
+                    gsTracker.track("/targetpage/formsubmit/sqtywlpc");
+                }
             } else if (wr == 2) {
                 alert('您已预约成功,请勿重复提交');
             } else {
