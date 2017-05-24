@@ -520,23 +520,23 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
   .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1.5s ease 3s forwards;
     opacity: 0;background-size: 100%;}
   .car img{width:100%;}
-  .number{width: 100%;top:5.53rem;font-size: 0.4rem;}
+  .number{width: 100%;top:5.55rem;font-size: 0.4rem;}
   .number span{margin-left:0.2rem;display: block;float: left;width:0.3rem;}
-  .number span:nth-of-type(1){margin-left:1.5rem;}
-  .qrcode{position:absolute;width: 100%;top:6.33rem;height:3rem;}
-  .qrcode img{width:1.39rem;left:0.97rem;}
-  .info{top:9.04rem;width:100%;height:4rem;margin-left:0;}
-  .info input,.info select{width:1.29rem;height:0.24rem;top:2.15rem;font-size:0.12rem;}
-  .info select{top:2.51rem;}
+  .number span:nth-of-type(1){margin-left:1.46rem;}
+  .qrcode{position:absolute;width: 100%;top:6.37rem;height:3rem;}
+  .qrcode img{width:1.39rem;left:0.93rem;}
+  .info{top:9.11rem;width:100%;height:4rem;margin-left:-0.04rem;}
+  .info input,.info select{width:1.32rem;height:0.24rem;top:2.15rem;font-size:0.12rem;}
+  .info select{top:2.54rem;}
   #name,#pro{left:1.84rem;}
   #tel,#city{left:3.7rem;}
-  .info #delear{width:2.92rem;height:0.22rem;top:2.9rem;left: 2.07rem;}
+  .info #delear{width: 2.94rem;height: 0.22rem;top: 2.93rem;left: 2.08rem}
   .btn{width:1.2rem !important;height:0.4rem !important;left: 2.5rem;top: 3.25rem;}
-  .wheel{width: 100%;top:15.35rem;height: 2rem;margin-left: -0.02rem;}
+  .wheel{width: 100%;top:15.52rem;height: 2rem;margin-left: -0.07rem;}
   .start{width: 0.8rem;height: 1.71rem;background-size: 100%;top: -0.03rem;left: 1.4rem;}
-  .award{width: 82%;top:17.7rem;margin-left: 0.6rem;height: 0.7rem;font-size: 0.1rem;}
+  .award{width: 82%;top:17.85rem;margin-left: 0.5rem;height: 0.7rem;font-size: 0.1rem;}
   .award div{font-size:0.1rem;margin-bottom:0.05rem;}
-  .pic{width: 100%;top:17.29rem;height: 4rem;}
+  .pic{width: 100%;top:17.46rem;height: 4rem;margin-left:-0.03rem;}
   .pic img{cursor:pointer;display:block;height:100%;margin-left:-0.15rem;}
   .pic .big_img{width:4.14rem;height:3rem;top:1.99rem;left:0.45rem;}
   .pic .big_img img{margin-left:-0.2rem;}
