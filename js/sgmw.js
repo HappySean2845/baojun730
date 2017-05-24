@@ -191,9 +191,7 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                     _smq.push(['custom', '17-baojun', '730millionsownernewMB-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }
                 if (window.gsTracker) {
-                    alert('触发国双');
                     var orderid = leadsID;
-                    console.log(orderid);
                     gsTracker.addOrder(orderid, 1);
                     gsTracker.setEcomProperty(orderid, "1", _name);
                     gsTracker.setEcomProperty(orderid, "2", _tel);
