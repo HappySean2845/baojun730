@@ -461,6 +461,10 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
   0%{opacity:0;transform:scale(0);}
   100%{opacity:1;transform:scale(1);}
 }
+@-webkit-keyframes car{
+  0%{opacity:0;-webkit-transform:scale(0);}
+  100%{opacity:1;-webkit-transform:scale(1);}
+}
 .number{position: absolute;top:926px;width: 1000px;font-size: 67px;font-weight: bold;color: #fff;text-align: center;}
 .number span{margin-left: 17px;display: block;float: left;width: 70px;}
 .number span:nth-of-type(1){margin-left:200px;}
@@ -517,7 +521,7 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
   .light img{transform-origin: 0.34rem 0.29rem;}
   .light:nth-of-type(1){left:0.07rem;}
   .light:nth-of-type(2){right:0.03rem;}
-  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1.5s ease 3s forwards;
+  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1s ease 1.5s forwards;-webkit-animation:car 1s ease 1.5s forwards
     opacity: 0;background-size: 100%;}
   .car img{width:100%;}
   .number{width: 100%;top:5.55rem;font-size: 0.4rem;}
