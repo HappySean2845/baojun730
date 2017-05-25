@@ -184,7 +184,6 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
                 var c = $("#city option:selected").text();
                 var d = $("#delear option:selected").text();
                 _tel = _tel.replace(_tel.substr(3,4),'****');
-                _gsq.push(['T', 'GWD-002942', 'trackEvent', 'click', '730',location.pathname]);
                 if(is_pc){
                     _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-submitsuccess', '{' + _name + '+' + _tel + '+' + p + '+' + c + '+' + _dealer + '}']);
                 }else{

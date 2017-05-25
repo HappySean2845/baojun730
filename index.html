@@ -320,8 +320,9 @@ window.onresize = function() {
 resiez();
 
 
-
+//留资
 $(".btn").click(function(event) {
+  _gsq.push(['T', 'GWD-002942', 'trackEvent', 'click', '730',location.pathname]);
   if (is_pc) {
     _smq.push(['custom', '17-baojun', '730millionsownernewPC-home-submit']);
   } else {
