@@ -514,14 +514,14 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
   background: url(../images/sign_up_btn.png) center no-repeat;left:39%;
 }
 @media screen and (max-width: 910px) {
-  body{width:100%;height:26rem;background:url(../images/wap_bg.jpg) center top no-repeat #1C065B;background-size:6.4rem 25.92rem;}
+  body{width:100%;height:26rem;background:url(../images/wap_bg1.jpg) center top no-repeat #1C065B;background-size:6.4rem 25.92rem;}
   .content{width:100%;height:23.3rem;}
   .light_wrap{width:100%;height:3rem;}
   .light{width:0.9rem;top:0.9rem;height:auto;}
   .light img{transform-origin: 0.34rem 0.29rem;}
   .light:nth-of-type(1){left:0.07rem;}
   .light:nth-of-type(2){right:0.03rem;}
-  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1s ease 1.5s forwards;-webkit-animation:car 1s ease 1.5s forwards
+  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1s ease forwards;-webkit-animation:car 1s ease forwards
     opacity: 0;background-size: 100%;}
   .car img{width:100%;}
   .number{width: 100%;top:5.55rem;font-size: 0.4rem;}
@@ -530,11 +530,11 @@ body{width:100%;height:3985px;background:url(../images/bg.jpg) center no-repeat;
   .qrcode{position:absolute;width: 100%;top:6.37rem;height:3rem;}
   .qrcode img{width:1.39rem;left:0.93rem;}
   .info{top:9.11rem;width:100%;height:4rem;margin-left:-0.04rem;}
-  .info input,.info select{width:1.45rem;height:0.36rem;top:2.15rem;font-size:0.12rem;outline:none;-webkit-appearance: none;}
+  .info input,.info select{border-radius:0;width:1.45rem;height:0.36rem;top:2.15rem;font-size:0.12rem;outline:none;-webkit-appearance: none;}
   .info select{top:2.73rem;}
   #name,#pro{left:1.64rem;}
   #tel,#city{left:3.61rem;}
-  .info #delear{width:3.13rem;height: 0.35rem;top: 2.93rem;left: 2.08rem}
+  .info #delear{width:3.13rem;height: 0.35rem;top:3.3rem;left:1.93rem}
   .btn{width:1.2rem !important;height:0.4rem !important;left: 2.5rem;top: 3.25rem;}
   .wheel{width: 100%;top:15.88rem;height: 2rem;margin-left: -0.07rem;}
   .start{width: 0.8rem;height: 1.71rem;background-size: 100%;top: -0.03rem;left: 1.4rem;}
