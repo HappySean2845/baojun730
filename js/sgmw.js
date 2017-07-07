@@ -178,7 +178,7 @@ function addInfo(_name, _tel, _province, _city, _dealer) {
         success: function (result) {
             var wr = result.success[0].result;
             if (wr == 1) {
-                alert('预约成功，可以进行抽奖');
+                alert('预约成功！');
                 can_draw = true;
                 var p = $("#pro option:selected").text();
                 var c = $("#city option:selected").text();
