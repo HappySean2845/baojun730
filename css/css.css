@@ -561,7 +561,7 @@ body{width:100%;height:4300px;background:url(../images/bg.jpg) center no-repeat;
   .number span{margin-left:0.2rem;display: block;float: left;width:0.3rem;}
   .number span:nth-of-type(1){margin-left:1.46rem;}
   .qrcode{position:absolute;width: 100%;top:7.3rem;height:3rem;}
-  .qrcode img{width: 1.39rem;right: 1.06rem;top: 1.13rem;}
+  .qrcode img{    width: 1.05rem;right: 1.23rem;top: 1.27rem;}
   .info{top:8.81rem;width:100%;height:4rem;margin-left:-0.04rem;}
   .info input,.info select{border-radius:0;width:2.97rem;height:0.54rem;left:1.96rem;font-size:0.12rem;outline:none;}
   #name{top:2.29rem;}
@@ -582,7 +582,7 @@ body{width:100%;height:4300px;background:url(../images/bg.jpg) center no-repeat;
   .pic .s_img:nth-of-type(2){top:1rem;}
   .pic .s_img:nth-of-type(3){top:2rem;}
   .pic .s_img:nth-of-type(4){top:3.03rem;}
-  .pic_2{position:absolute;width: 100%;top:19.58rem;height: 4rem;}
+  .pic_2{position:absolute;width: 100%;top:19.58rem;height: 4rem;left:-0.17rem}
   .pic_2 img{cursor:pointer;display:block;height:100%;margin-left:-0.15rem;}
   .pic_2 .big_img{width:4.14rem;height:3rem;top:0.49rem;right:0.45rem;}
   .pic_2 .big_img img{margin-left:-0.2rem;}
