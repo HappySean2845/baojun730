@@ -432,7 +432,7 @@ body{width:100%;height:4300px;background:url(../images/bg.jpg) center no-repeat;
 .light:nth-of-type(2){right:-61px;}
 .light:nth-of-type(1) img{transform:rotate(-25deg);animation:light_one 2s ease;}
 .light:nth-of-type(2) img{transform:rotate(25deg);animation:light_two 2s ease;}
-.car{position:absolute;left:-381px;width:1760px;height:1166px;background:url(../images/car.png);animation:car 1.5s ease 1.5s forwards;opacity:0;}
+.car{position:absolute;left:-381px;width:1760px;height:1166px;background:url(../images/car.png);}
 @keyframes light_one{
   0%{opacity:0;transform:rotate(-25deg)}
   10%{opacity:1;transform:rotate(-25deg)}
@@ -543,7 +543,7 @@ body{width:100%;height:4300px;background:url(../images/bg.jpg) center no-repeat;
   z-index:20;
   transform:scale(0.8);-webkit-transform:scale(0.8);
 }
-.sign_up_now{position: absolute;top:189px;display: block;width: 229px;height: 62px;
+.sign_up_now{position: absolute;top:229px;display: block;width: 229px;height: 62px;
   background: url(../images/sign_up_btn.png) center no-repeat;left:39%;
 }
 @media screen and (max-width: 910px) {
@@ -554,8 +554,7 @@ body{width:100%;height:4300px;background:url(../images/bg.jpg) center no-repeat;
   .light img{transform-origin: 0.34rem 0.29rem;}
   .light:nth-of-type(1){left:0.07rem;}
   .light:nth-of-type(2){right:0.03rem;}
-  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);animation:car 1s ease forwards;-webkit-animation:car 1s ease forwards;
-    opacity: 0;background-size: 100%;}
+  .car{position: absolute;left:0;width:100%;height:527px;background:url(../images/wap_car.png);background-size: 100%;}
   .car img{width:100%;}
   .number{width: 100%;top:5.5rem;font-size: 0.4rem;}
   .number span{margin-left:0.2rem;display: block;float: left;width:0.3rem;}
